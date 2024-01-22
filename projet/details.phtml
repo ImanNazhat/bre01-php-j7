@@ -1,12 +1,28 @@
+<?php
+
+require('config/connexion.php');
+
+$query = $db->prepare('SELECT * FROM annonces');
+$query->execute();
+$annonces = $query->fetchAll(PDO::FETCH_ASSOC);
+
+var_dump($annonces);
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Détails de l'Annonce</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Détails de l'Annonce</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <main class="container">
+  <main class="container">
     <header>
       <h1>Plateforme Annonces</h1>
       <nav>
@@ -19,31 +35,34 @@
     </header>
 
     <section id="annonce-1">
-      
+
       <div id="details-1">
         <h2>Titre de l'annonce</h2>
         <p>Description détaillée de l'annonce.</p>
         <p>Prix: </p>
         <p>Localisation: Ville, Pays</p>
-        <button class="favorite">Ajouter aux Favoris</button>
-        <button class="remove-favorite">Retirer des Favoris</button>
+        <a href="logic/actions.php?t=1&id=<?= $annonces[0]['id'] ?>">Ajouter aux Favoris</a>
+        <a href="logic/actions.php?t=2&id=<?= $annonces[0]['id'] ?>">Retirer des Favoris</a>
+
       </div>
     </section>
-    
+
     <section id="annonce-2">
-      
+
       <div id="details-2">
         <h2>Titre de l'annonce</h2>
         <p>Description détaillée de l'annonce.</p>
         <p>Prix: </p>
         <p>Localisation: Ville, Pays</p>
-        <button class="favorite">Ajouter aux Favoris</button>
-        <button class="remove-favorite">Retirer des Favoris</button>
+
+        <a href="actions.php?t=1&id=<?= $post['id'] ?>">Ajouter aux Favoris</a>
+        <a href="actions.php?t=1&id=<?= $post['id'] ?>">Retirer des Favoris</a>
+
       </div>
     </section>
-    
+
     <section id="annonce-3">
-      
+
       <div id="details-3">
         <h2>Titre de l'annonce</h2>
         <p>Description détaillée de l'annonce.</p>
@@ -55,4 +74,5 @@
     </section>
   </main>
 </body>
+
 </html>
