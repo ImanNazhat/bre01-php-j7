@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+
+
 require "config/connexion.php";
 
 $route = null;
