@@ -1,3 +1,9 @@
+<?php
+$query = $db->prepare('SELECT * FROM annonces');
+$query->execute();
+$users = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

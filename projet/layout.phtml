@@ -12,20 +12,19 @@
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body class="container-fluid p-0">
-        <?php require "templates/header.phtml"; ?>
-
+       
         <?php
         if($route === "accueil")
         {
             require "accueil.phtml";
         }
-        else if($route === "annonce")
+        else if($route === "details")
         {
             require "details.phtml";
         }
         else
         {
-            require "templates/accueil.phtml";
+            require "accueil.phtml";
         }
         ?>
 

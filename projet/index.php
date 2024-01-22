@@ -9,7 +9,7 @@ if(isset($_GET["route"]))
     $route = $_GET["route"];
 }
 
-require "accueil.phtml";
+require "layout.phtml";
 
 ?>
 
